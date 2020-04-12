@@ -7,17 +7,17 @@ describe("Projects", () => {
     const response = await request(app)
       .post("/repositories")
       .send({
-        url: "https://github.com/Rocketseat/umbriel",
-        title: "Umbriel",
-        techs: ["Node", "Express", "TypeScript"]
+        url: "https://github.com/assoares383/starter-api-nodejs",
+        title: "Alexandre",
+        techs: ["NodeJS", "ReactJS", "TypeScript"]
       });
 
     expect(isUuid(response.body.id)).toBe(true);
 
     expect(response.body).toMatchObject({
-      url: "https://github.com/Rocketseat/umbriel",
-      title: "Umbriel",
-      techs: ["Node", "Express", "TypeScript"],
+      url: "https://github.com/assoares383/starter-api-nodejs",
+      title: "Alexandre",
+      techs: ["NodeJS", "ReactJS", "TypeScript"],
       likes: 0
     });
   });
@@ -26,9 +26,9 @@ describe("Projects", () => {
     const repository = await request(app)
       .post("/repositories")
       .send({
-        url: "https://github.com/Rocketseat/umbriel",
-        title: "Umbriel",
-        techs: ["Node", "Express", "TypeScript"]
+        url: "https://github.com/assoares383/starter-api-nodejs",
+        title: "Alexandre",
+        techs: ["NodeJS", "ReactJS", "TypeScript"]
       });
 
     const response = await request(app).get("/repositories");
@@ -37,9 +37,9 @@ describe("Projects", () => {
       expect.arrayContaining([
         {
           id: repository.body.id,
-          url: "https://github.com/Rocketseat/umbriel",
-          title: "Umbriel",
-          techs: ["Node", "Express", "TypeScript"],
+          url: "https://github.com/assoares383/starter-api-nodejs",
+          title: "Alexandre",
+          techs: ["NodeJS", "ReactJS", "TypeScript"],
           likes: 0
         }
       ])
@@ -50,25 +50,25 @@ describe("Projects", () => {
     const repository = await request(app)
       .post("/repositories")
       .send({
-        url: "https://github.com/Rocketseat/umbriel",
-        title: "Umbriel",
-        techs: ["Node", "Express", "TypeScript"]
+        url: "https://github.com/assoares383/starter-api-nodejs",
+        title: "Alexandre",
+        techs: ["NodeJS", "ReactJS", "TypeScript"]
       });
 
     const response = await request(app)
       .put(`/repositories/${repository.body.id}`)
       .send({
-        url: "https://github.com/Rocketseat/unform",
-        title: "Unform",
-        techs: ["React", "ReactNative", "TypeScript", "ContextApi"]
+        url: "https://github.com/assoares383/react-api",
+        title: "API",
+        techs: ["ReactJS", "ReactNative", "TypeScript", "Styled Component"]
       });
 
     expect(isUuid(response.body.id)).toBe(true);
 
     expect(response.body).toMatchObject({
-      url: "https://github.com/Rocketseat/unform",
-      title: "Unform",
-      techs: ["React", "ReactNative", "TypeScript", "ContextApi"]
+      url: "https://github.com/assoares383/react-api",
+      title: "API",
+      techs: ["ReactJS", "ReactNative", "TypeScript", "Styled Component"]
     });
   });
 
@@ -82,9 +82,9 @@ describe("Projects", () => {
     const repository = await request(app)
       .post("/repositories")
       .send({
-        url: "https://github.com/Rocketseat/umbriel",
-        title: "Umbriel",
-        techs: ["React", "ReactNative", "TypeScript", "ContextApi"]
+        url: "https://github.com/assoares383/starter-api-nodejs",
+        title: "Alexandre",
+        techs: ["ReactJS", "ReactNative", "TypeScript", "Styled Component"]
       });
 
     const response = await request(app)
@@ -102,9 +102,9 @@ describe("Projects", () => {
     const response = await request(app)
       .post("/repositories")
       .send({
-        url: "https://github.com/Rocketseat/umbriel",
-        title: "Umbriel",
-        techs: ["Node", "Express", "TypeScript"]
+        url: "https://github.com/assoares383/starter-api-nodejs",
+        title: "Alexandre",
+        techs: ["NodeJS", "ReactJS", "TypeScript"]
       });
 
     await request(app)
